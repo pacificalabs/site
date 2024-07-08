@@ -1,5 +1,7 @@
 # README
 
+Preview site on GH Pages here: [https://pacificalabs.github.io/site/](https://pacificalabs.github.io/site/)
+
 ## ⚙️ Prerequisites
 
 You need to have these prerequisites installed on your machine.
