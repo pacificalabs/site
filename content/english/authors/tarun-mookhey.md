@@ -1,20 +1,16 @@
 ---
-title: John Doe
-email: johndoe@email.com
+title: Tarun Mookhey
+email: tarun@pacificalabs.org
 image: "/images/avatar.png"
 description: this is meta description
 social:
   - name: github
     icon: fa-brands fa-github
-    link: https://github.com
-
-  - name: twitter
-    icon: fa-brands fa-twitter
-    link: https://twitter.com
+    link: https://github.com/tarun-pacifica
 
   - name: linkedin
     icon: fa-brands fa-linkedin
-    link: https://linkedin.com
+    link: https://linkedin.com/in/tarunmookhey
 ---
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
