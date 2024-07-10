@@ -17,12 +17,9 @@ features:
     image: "/images/service-1.png"
     content: "We innovate and renovate. Making tech which is both intuitive and performant."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Hugo and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - "Build with modern technologies and customizable styling"
+      - "Fully responsive designs on all devices"
+      - "SEO-optimisations for better search engine rankings"
     button:
       enable: false
       label: "Get Started"
