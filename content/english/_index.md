@@ -1,19 +1,21 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
+  title: "The Development team you need to build your Business success"
+  content: "In a digital landscape where innovation drives success, we specialize in crafting bespoke websites and applications that elevate your business to new heights. Our expert team combines technical prowess with creative flair to deliver solutions that not only meet but exceed your expectations.
+
+  Whether you're a startup forging new paths or an established enterprise seeking to redefine your online presence, our tailored approach ensures that every project is a masterpiece of functionality and design. From concept to deployment, we are committed to transforming your vision into reality with precision and passion."
   image: "/images/banner.png"
   button:
     enable: true
-    label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/hugoplate"
+    label: "Get Started"
+    link: "/contact"
 
 # Features
 features:
-  - title: "What's Included in Hugoplate"
+  - title: "We are makers"
     image: "/images/service-1.png"
-    content: "Hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in Hugoplate"
+    content: "We innovate and renovate. Making tech which is both intuitive and performant."
     bulletpoints:
       - "10+ Pre-build pages"
       - "95+ Google Pagespeed Score"
@@ -23,29 +25,31 @@ features:
       - "**Open-source and free** for personal and commercial use"
     button:
       enable: false
-      label: "Get Started Now"
-      link: "#"
+      label: "Get Started"
+      link: "/contact"
 
-  - title: "Discover the Key Features Of Hugo"
+  - title: "Broad multisector track record"
     image: "/images/service-2.png"
-    content: "Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+    content: "Deep specialist technical knowledge. Some of the key sectors are:"
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+      - "eCommerce"
+      - "Fintech"
+      - "Edutech"
+      - "Proptech"
+      - "Healthtech"
     button:
       enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/hugoplate"
+      label: "Get Started"
+      link: "/contact"
 
-  - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
+  - title: "We’ve worked with a wide range of technologies across the full stack"
     image: "/images/service-3.png"
-    content: "With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use."
+    content: "Deep specialist technical knowledge. Some of the key technologies are:"
     bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "Ruby on Rails"
+      - "Go-lang"
+      - "PHP"
+      - "Node"
     button:
       enable: false
       label: ""
