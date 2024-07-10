@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "/"
+baseURL = "https://pacificalabs.github.io/site/"
 # Title of your website (required).
 title = "Pacifica Labs"
 # Your theme name
