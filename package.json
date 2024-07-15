@@ -1,9 +1,7 @@
 {
-  "name": "hugoplate",
-  "description": "hugo tailwindcss boilerplate",
+  "name": "PacificaLabs",
+  "description": "Pacifica Labs website",
   "version": "1.13.2",
-  "license": "MIT",
-  "author": "zeon.studio",
   "scripts": {
     "dev": "hugo server",
     "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
