@@ -14,7 +14,7 @@ banner:
 # Features
 features:
   - title: "We are makers"
-    image: "/images/service-1.png"
+    image: "/images/logos/devices_800x300.png"
     content: "We innovate and renovate. Making tech which is both intuitive and performant."
     bulletpoints:
       - "Build with modern technologies and customizable styling"
