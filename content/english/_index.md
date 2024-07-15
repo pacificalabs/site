@@ -40,7 +40,7 @@ features:
       link: "/contact"
 
   - title: "We’ve worked with a wide range of technologies across the full stack"
-    image: "/images/service-3.png"
+    image: "/images/logos/techstack_1200x630.png"
     content: "Deep specialist technical knowledge. Some of the key technologies are:"
     bulletpoints:
       - "Ruby on Rails"
