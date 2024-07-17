@@ -1,10 +1,10 @@
 ---
 title: "Step-By-Step-Guide: Deploy your Hugo-built static site online."
 meta_title: ""
-date: "2021-07-22"
+date: 2021-07-22T05:00:00Z
 description: "Follow these straightforward steps to deploy your static site built with Hugo for free."
 image: "/images/image-placeholder.png"
-categories: ["Application", "Data"]
+categories: ["Application", "Data", "How to"]
 tags: ["hugo","static-site","developer","github-pages","easy"]
 author: "Tarun Mookhey"
 draft: false
