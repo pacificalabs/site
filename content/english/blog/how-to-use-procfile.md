@@ -1,7 +1,7 @@
 ---
 title: "How to use Procfile for Ruby on Rails apps"
 meta_title: ""
-date: 2024-07-013T05:00:00Z
+date: 2024-07-13T05:00:00Z
 description: "Understanding the value of using the Procfile in the Rails apps."
 image: "/images/image-placeholder.png"
 categories: ["Application", "Ruby on Rails", "How to"]
