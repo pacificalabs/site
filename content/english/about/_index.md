@@ -1,8 +1,8 @@
 ---
-title: "Hey, I am John Doe!"
+title: "Hey, I am Tarun Mookhey!"
 meta_title: "About"
 description: "this is meta description"
-image: "/images/avatar.png"
+image: "/images/tarun-profile-square.webp"
 draft: false
 ---
 
