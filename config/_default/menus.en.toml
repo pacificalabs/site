@@ -12,23 +12,14 @@ pageRef = "/about"
 weight = 2
 
 [[main]]
-name = "Work"
-pageRef = "/work"
+name = "Works"
+pageRef = "/works"
 weight = 3
 
 [[main]]
-weight = 4
-name = "More"
-
-[[main]]
-parent = "More"
 name = "Blog"
 pageRef = "/blog"
-
-[[main]]
-parent = "More"
-name = "Contact"
-pageRef = "/contact"
+weight = 4
 
 # footer menu
 [[footer]]
