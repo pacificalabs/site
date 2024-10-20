@@ -1,10 +1,8 @@
 ---
 # Banner
 banner:
-  title: "The Development team you need to build your Business success"
-  content: "In a digital landscape where innovation drives success, we specialize in crafting bespoke websites and applications that elevate your business to new heights. Our expert team combines technical prowess with creative flair to deliver solutions that not only meet but exceed your expectations.
-
-  Whether you're a startup forging new paths or an established enterprise seeking to redefine your online presence, our tailored approach ensures that every project is a masterpiece of functionality and design. From concept to deployment, we are committed to transforming your vision into reality with precision and passion."
+  title: "Grow Your Business.Faster."
+  content: "With our precision-engineered apps & services ..."
   image: "images/logo2023.png"
   button:
     enable: false
