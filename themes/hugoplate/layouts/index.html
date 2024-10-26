@@ -1,9 +1,8 @@
 {{ define "main" }}
 <!-- Banner -->
 {{ with .Params.banner }}
-<section class="section pt-14">
   <div class="container">
-    <div class="row justify-center">
+    <div class="row justify-center pt-12">
       <div class="col-12">
         {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[300px]" "DisplayXL" "800x" ) }}
       </div>
@@ -30,7 +29,6 @@
     </div>
   </div>
 </div>
-</section>
 {{ end }}
 <!-- /Banner -->
 <!-- Offerings -->
