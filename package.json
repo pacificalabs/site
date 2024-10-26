@@ -3,18 +3,14 @@
   "description": "Pacifica Labs website",
   "version": "1.13.2",
   "scripts": {
-    "dev": "hugo server",
-    "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
-    "preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
-    "dev:example": "cd exampleSite; hugo server",
-    "build:example": "cd exampleSite; hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
-    "preview:example": "cd exampleSite; hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
-    "update-modules": "node ./scripts/clearModules.js && hugo mod clean --all && hugo mod get -u ./... && hugo mod tidy",
-    "remove-darkmode": "node ./scripts/removeDarkmode.js && yarn format",
-    "project-setup": "node ./scripts/projectSetup.js",
-    "theme-setup": "node ./scripts/themeSetup.js",
-    "update-theme": "node ./scripts/themeUpdate.js",
-    "format": "prettier -w ."
+    "hugo": "./hugo-wrapper.sh",
+    "dev": "npm run hugo -- server",
+    "build": "npm run hugo -- --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "preview": "npm run hugo -- server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+    "dev:example": "cd exampleSite && npm run hugo -- server",
+    "build:example": "cd exampleSite && npm run hugo -- --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "preview:example": "cd exampleSite && npm run hugo -- server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+    "update-modules": "node ./scripts/clearModules.js && npm run hugo -- mod clean --all && npm run hugo -- mod get -u ./... && npm run hugo -- mod tidy"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
