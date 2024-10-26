@@ -55,7 +55,6 @@ jobs:
       - name: Setup Project
         run: |
           npm ci  # Use ci instead of install for cleaner, more reliable builds
-          npm run project-setup
 
       - name: Build with Hugo
         run: |
