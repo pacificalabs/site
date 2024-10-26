@@ -1,13 +1,60 @@
 {{ define "main" }}
-  <section class="section-sm">
-    <div class="container">
-      <div class="row justify-center">
-        <div class="md:col-10 lg:col-7 text-center">
-          {{ partial "image" (dict "Src" .Params.image "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}
-          <h2 class="h3 mb-6">{{ .Title }}</h2>
-          <div class="content">{{ .Content }}</div>
-        </div>
+{{ partial "page-header" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+        <h2 class="mt-4 mb-4">
+          {{ .Params.aboutTitle | markdownify }}
+        </h2>
+        <h6>
+          {{ .Params.aboutDescription | markdownify }}
+        </h6>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+{{ range $i, $e:= .Params.explainers }}
+<section class="section-sm {{ if not (modBool $i 2) }}bg-gradient{{ end }}">
+  <div class="container">
+    <div class="row items-center justify-between">
+      <div
+      class="mb:md-0 {{ if (modBool $i 1) }}
+      md:order-1
+      {{ end }} md:col-5 mb-6">
+      {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+    </div>
+    <div
+    class="{{ if (modBool $i 2) }}
+    md:order-2
+    {{ end }} md:col-7 lg:col-6">
+    <h2 class="mb-4">
+      {{ .title | markdownify }}
+    </h2>
+    <p class="mb-8 text-lg">
+      {{ .content | markdownify }}
+    </p>
+    <ul>
+      {{ range .bulletpoints }}
+      <li class="relative mb-4 pl-6">
+        <i class="fa fa-check absolute left-0 top-1.5"></i>
+        {{ . | markdownify }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ with .button }}
+    {{ if .enable }}
+    <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+      {{ .label }}
+      <i class="fa fa-arrow-right pl-2"></i>
+    </a>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+</div>
+</section>
+{{ end }}
+{{ partial "components/testimonials" . }}
 {{ end }}
