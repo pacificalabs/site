@@ -59,7 +59,7 @@ jobs:
 
       - name: Build with Hugo
         run: |
-          hugo --minify --gc --cleanDestinationDir --enableGitInfo --collectStats
+          hugo --minify --gc --cleanDestinationDir --enableGitInfo
           
       - name: Check hugo_stats.json
         run: |
