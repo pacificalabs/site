@@ -4,7 +4,7 @@
             "theme_color": {
                 "primary": "#020659",
                 "body": "#f9f6f5",
-                "border": "blue",
+                "border": "lightgrey",
                 "theme_light": "#fff",
                 "theme_dark": "red"
             },
@@ -19,7 +19,7 @@
                 "primary": "#fdf9a6",
                 "body": "#020659",
                 "border": "#ffff00",
-                "theme_light": "#fff",
+                "theme_light": "#21235e",
                 "theme_dark": "#022f59"
             },
             "text_color": {
