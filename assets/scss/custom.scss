@@ -29,3 +29,16 @@
 .btn-primary:is(.dark *) {
     background-color: #feddbf;
 }
+
+.btn-outline-primary:hover:is(.dark *) {
+    background-color: #feddbf;;
+}
+
+.form-label:is(.dark *) {
+    color: #feddbf;
+}
+
+.form-input {
+    background-color: #012240;
+    color: #fff;
+}
