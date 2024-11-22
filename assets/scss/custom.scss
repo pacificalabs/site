@@ -16,3 +16,16 @@
     border-color: #feddbf / var(--tw-border-opacity);
     color: #feddbf / var(--tw-text-opacity);
 }
+
+.dark\:text-white:is(.dark *) {
+    color: #feddbf / var(--tw-text-opacity) !important;
+}
+
+.theme-switcher span:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: #feddbf;
+}
+
+.btn-primary:is(.dark *) {
+    background-color: #feddbf;
+}
