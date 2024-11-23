@@ -8,7 +8,7 @@ image: "/images/image-placeholder.png"
 explainers:
   - title: ""
     image: "/images/logos/devices_800x300.png"
-    content: "Make tech which is both intuitive and performant."
+    content: "We make tech which is both intuitive and performant."
     bulletpoints:
       - "Build with modern technologies and customizable styling"
       - "Fully responsive designs on all devices"
