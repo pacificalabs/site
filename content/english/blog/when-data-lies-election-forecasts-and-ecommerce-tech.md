@@ -10,7 +10,7 @@ author: "Tarun Mookhey"
 draft: false
 ---
 
-Did last week's election result come as a surprise to you? If so you may be shocked to learn the last 3 US elections were inaccurately forecast, not to mention the last 2 UK elections - and the last 3 Australian elections.
+Did the 2024 US election result come as a surprise to you? If so you may be shocked to learn the last 3 US elections were inaccurately forecast, not to mention the last 2 UK elections - and the last 3 Australian elections.
 
 ### ***Why this matters:***
 If sophisticated polling operations with billion-dollar budgets can misread consumer sentiment so drastically across the US, UK, and Australia, it raises critical questions about the reliability of our own data-driven ecommerce systems.
