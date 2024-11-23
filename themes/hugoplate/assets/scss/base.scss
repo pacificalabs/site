@@ -5,7 +5,7 @@
 * @Last Modified time: 2024-10-14 21:49:50
 */
 
-body {
+body, .content {
   @apply bg-body dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
 }
 
