@@ -6,6 +6,6 @@ banner:
   button:
     enable: true
     label: "Learn more"
-    link: "/contact"
+    link: "/site/contact"
 
 ---
