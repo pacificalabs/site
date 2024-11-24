@@ -24,7 +24,7 @@
           {{ if $categories }}
           <li class="mr-4 inline-block">
             <i class="fa-regular fa-folder mr-2"></i>
-            {{ range $i,$p:= $categories }}
+            {{ range $i, $p:= (sort $categories) }}
             <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/" class="">{{ . }}{{ if ne $i (sub (len $categories) 1) }}, {{ end }}</a>
             {{ end }}
           </li>
