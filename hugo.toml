@@ -31,6 +31,9 @@ shortname = 'themefisher-template' # we use disqus to show comments in blog post
 [permalinks.page]
 "pages" = "/:slugorfilename/"
 
+########################## Contact Form ##########################
+
+formspree_form_id = "xyzydpza"
 
 ############################# Modules ############################
 [module]
