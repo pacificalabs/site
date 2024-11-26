@@ -20,9 +20,7 @@
   <div class="container">
     <div class="row items-center justify-between">
       <div
-      class="mb:md-0 {{ if (modBool $i 1) }}
-      md:order-1
-      {{ end }} md:col-5 mb-6">
+      class="mb:md-0 {{ if (modBool $i 1) }} md:order-1 {{ end }}{{ if strings.Contains .title "stack" }}stack{{ end }} md:col-5 mb-6">
       {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
     </div>
     <div

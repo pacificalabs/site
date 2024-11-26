@@ -54,3 +54,14 @@ a.nav-link {
 .content {
 	font-size: 1.2rem;
 }
+
+.stack {
+    min-height: 43vh;
+    padding-top: 13vh;
+    padding-bottom: 13vh;
+    border-radius: 10px;
+}
+
+.stack.dark {
+    background-color: #feddbf;    
+}
