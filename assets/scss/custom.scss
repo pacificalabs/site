@@ -73,3 +73,11 @@ a.nav-link {
 .bg-gradient h1, .bg-gradient h2, .bg-gradient h3, .bg-gradient h4, .bg-gradient h5, .bg-gradient h6 {
     color: #f9f6f5;
 }
+  h1:is(.dark *),
+  h3:is(.dark *),
+  h4:is(.dark *),
+  h5:is(.dark *),
+  h6:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: #012240;
+}
