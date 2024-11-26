@@ -4,7 +4,7 @@ aboutTitle: "We are makers."
 aboutDescription: "We innovate and renovate."
 meta_title: ""
 type: "about"
-image: "/images/image-placeholder.png"
+image: "/images/bck.jpg"
 explainers:
   - title: ""
     image: "/images/logos/devices_800x300.png"

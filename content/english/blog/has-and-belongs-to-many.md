@@ -3,7 +3,7 @@ title: "Has and Belongs To Many (Headaches)"
 meta_title: ""
 date: 2022-03-02T05:00:00Z
 description: "We provide tips to make the setup of HABTM associations painfree."
-image: "/images/image-placeholder.png"
+image: "/images/bck.jpg"
 categories: ["Application", "Data"]
 tags: ["ruby-on-rails","active-record","developer","database","back-end"]
 author: "Tarun Mookhey"

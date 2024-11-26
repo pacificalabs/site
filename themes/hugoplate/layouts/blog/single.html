@@ -1,17 +1,19 @@
 {{ define "main" }}
 <section class="section pt-7">
   <div class="container">
-    <div class="row justify-center">
+    <div class="row">
       <article class="lg:col-10">
-        {{ $image:= .Params.image }}
-        {{ if $image }}
-        <div class="mb-10">
-          {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full rounded") }}
-        </div>
-        {{ end }}
-        <h1 class="h2 mb-4">
-        {{ .Title }}
-        </h1>
+{{ $image:= .Params.image }}
+{{ if $image }}
+<div class="relative mb-10">
+  <a href="{{ .RelPermalink }}" class="block">
+    {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full rounded") }}
+    <h1 class="h1 absolute inset-0 flex text-center items-center p-4 text-pacifica-blue bg-blue-100 bg-opacity-50">
+      {{ .Title }}
+    </h1>
+  </a>
+</div>
+{{ end }}
         <ul class="mb-4">
           <li class="mr-4 inline-block">
             <a

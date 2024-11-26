@@ -1,13 +1,15 @@
 <div class="bg-body dark:bg-darkmode-body">
   {{ $image:= .Params.image }}
   {{ if $image }}
-    {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "mb-6 w-full rounded") }}
-  {{ end }}
-  <h5 class="mb-3">
-    <a href="{{ .RelPermalink }}">
-      {{ .Title }}
+  <div class="relative mb-6">
+    <a href="{{ .RelPermalink }}" class="block">
+      {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full rounded") }}
+      <h3 class="absolute inset-0 flex items-center p-4 text-pacifica-blue text-center bg-blue-100 bg-opacity-50">
+        {{ .Title }}
+      </h5>
     </a>
-  </h5>
+  </div>
+  {{ end }}
   <p class="mb-6">{{ .Summary }}</p>
   <a class="font-semibold" href="{{ .RelPermalink }}">
     {{ i18n "read_more" }}...

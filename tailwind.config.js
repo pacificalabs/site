@@ -65,6 +65,7 @@ module.exports = {
         },
         extend: {
             colors: {
+                'pacifica-blue':'#012240',
                 text: theme.colors.default.text_color.default,
                 light: theme.colors.default.text_color.light,
                 dark: theme.colors.default.text_color.dark,
