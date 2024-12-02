@@ -81,3 +81,8 @@ a.nav-link {
   --tw-text-opacity: 1;
   color: #012240;
 }
+
+.content :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: darkslateblue !important;
+  background-color: lightsteelblue !important;
+}
