@@ -1,14 +1,14 @@
 {{ define "main" }}
 {{ partial "page-header" . }}
 
-<section class="section">
+<section class="section" style="background-color: #020659;">
   <div class="container">
     <div class="row">
       <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
-        <h2 class="mt-4 mb-4">
+        <h2 class="mt-4 mb-4" style="color: #feddbf;">
           {{ .Params.aboutTitle | markdownify }}
         </h2>
-        <h6>
+        <h6 class="mt-4 mb-4" style="color: #feddbf;">
           {{ .Params.aboutDescription | markdownify }}
         </h6>
       </div>
