@@ -7,11 +7,11 @@
         <!-- Header Image and Title -->
         <div class="relative mb-6 md:mb-10">
           <a href="{{ .RelPermalink }}" class="block">
-      {{ $image:= .Params.image }}
-      {{ if $image }}
+            {{ $image:= .Params.image }}
+            {{ if $image }}
 
             {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full h-48 md:h-64 lg:h-72 rounded object-cover") }}
-{{end}}
+            {{end}}
             <h1 class="absolute bottom-0 inset-x-0 p-4 text-lg md:text-2xl lg:text-3xl font-bold text-pacifica-blue bg-blue-100 bg-opacity-50 rounded-b">
               {{ .Title }}
             </h1>
@@ -45,13 +45,6 @@
         <!-- Content -->
         <div class="content prose dark:prose-invert max-w-none mb-8">
           {{ .Content }}
-        </div>
-
-        <!-- Code Blocks -->
-        <div class="prose max-w-none overflow-x-auto mb-8">
-          <pre class="rounded-lg bg-gray-900 text-white p-4 text-sm md:text-base overflow-x-auto">
-            <code>{{ .Content }}</code>
-          </pre>
         </div>
       </article>
     </section>
