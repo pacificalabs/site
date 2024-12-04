@@ -7,7 +7,7 @@
 <div class="bg-body dark:bg-darkmode-body">
   {{ $image:= .Params.image }}
   {{ if $image }}
-    <div class="min-h-[500px] md:min-h-[600px] relative mb-10 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-slate-800/90">
+    <div class="min-h-[500px] md:min-h-[600px] relative mb-10 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-blue-950">
       <!-- Image and Title Section -->
       <div class="relative">
         <a href="{{ .RelPermalink }}" class="block">
@@ -20,9 +20,9 @@
       </div>
       
       <!-- Content Section -->
-      <div class="p-6 bg-slate-100/90 dark:bg-slate-800/90 rounded-b-lg">
+      <div class="p-6 bg-slate-100/90 dark:bg-blue-950 rounded-b-lg">
         <p class="mb-6 text-slate-800 dark:text-slate-100">{{ .Summary }}</p>
-        <a class="font-semibold text-slate-900 dark:text-slate-50 hover:text-slate-700 dark:hover:text-slate-200 transition-colors" href="{{ .RelPermalink }}">
+        <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
           {{ i18n "read_more" }}...
         </a>
       </div>
