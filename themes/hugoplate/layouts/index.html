@@ -4,7 +4,13 @@
   <div>
     <div class="row justify-center pt-7">
       <div class="col-12">
-        {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[300px]" "DisplayXL" "800x" ) }}
+        {{ partial "image" (dict 
+          "Src" .image 
+          "Alt" "Banner image" 
+          "Loading" "eager" 
+          "Class" "mx-auto lg:!max-w-[500px]" 
+          "DisplayXL" "800x" 
+        ) }}
       </div>
       <div class="lg:col-7 md:col-9 mb-8 text-center">
         <h1 class="my-5 text-h3 lg:text-h1">
@@ -16,18 +22,18 @@
         {{ with .button }}
         {{ if .enable }}
         <a
-        class="btn btn-primary"
-        href="{{ .link | absURL }}"
-        {{ if strings.HasPrefix .link `http` }}
-        target="_blank" rel="noopener"
-        {{ end }}>
-        {{ .label }}
-        <i class="fa fa-arrow-right pl-2"></i>
-      </a>
-      {{ end }}
-      {{ end }}
+          class="btn btn-primary"
+          href="{{ .link | absURL }}"
+          {{ if strings.HasPrefix .link `http` }}
+          target="_blank" rel="noopener"
+          {{ end }}>
+          {{ .label }}
+          <i class="fa fa-arrow-right pl-2"></i>
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
     </div>
   </div>
-</div>
 {{ end }}
 {{ end }}
