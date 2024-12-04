@@ -1,17 +1,31 @@
+{{ $bgColors := slice "bg-slate-100" "bg-slate-200" "bg-slate-100" }}
+{{ $darkBgColors := slice "bg-slate-800" "bg-slate-700" "bg-slate-800" }}
+{{ $index := 0 }}
+{{ if .Weight }}
+  {{ $index = mod (sub .Weight 1) 3 }}
+{{ end }}
 <div class="bg-body dark:bg-darkmode-body">
   {{ $image:= .Params.image }}
   {{ if $image }}
-<div class="relative mb-10">
-  <a href="{{ .RelPermalink }}" class="block">
-    {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full h-48 md:h-64 lg:h-72 rounded object-cover") }}
-    <h1 class="absolute top-0 bottom-0 inset-x-0 p-2 text-2xl md:text-3xl lg:text-4xl font-bold text-pacifica-blue bg-blue-100 bg-opacity-50 rounded-b md:content-end lg:content-start md:text-center lg:text-end">
-      {{ .Title }}
-    </h1>
-  </a>
-</div>
+    <div class="min-h-[500px] md:min-h-[600px] relative mb-10 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-slate-800/90">
+      <!-- Image and Title Section -->
+      <div class="relative">
+        <a href="{{ .RelPermalink }}" class="block">
+          {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full h-48 md:h-64 lg:h-72 rounded-t-lg object-cover") }}
+          <div class="absolute inset-0 bg-slate-900/30 rounded-t-lg"></div>
+          <h1 class="absolute bottom-0 inset-x-0 p-4 text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+            {{ .Title }}
+          </h1>
+        </a>
+      </div>
+      
+      <!-- Content Section -->
+      <div class="p-6 bg-slate-100/90 dark:bg-slate-800/90 rounded-b-lg">
+        <p class="mb-6 text-slate-800 dark:text-slate-100">{{ .Summary }}</p>
+        <a class="font-semibold text-slate-900 dark:text-slate-50 hover:text-slate-700 dark:hover:text-slate-200 transition-colors" href="{{ .RelPermalink }}">
+          {{ i18n "read_more" }}...
+        </a>
+      </div>
+    </div>
   {{ end }}
-  <p class="mb-6">{{ .Summary }}</p>
-  <a class="font-semibold" href="{{ .RelPermalink }}">
-    {{ i18n "read_more" }}...
-  </a>
 </div>
