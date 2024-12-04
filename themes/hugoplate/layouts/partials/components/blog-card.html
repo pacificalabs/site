@@ -1,18 +1,12 @@
-{{ $bgColors := slice "bg-slate-100" "bg-slate-200" "bg-slate-100" }}
-{{ $darkBgColors := slice "bg-slate-800" "bg-slate-700" "bg-slate-800" }}
-{{ $index := 0 }}
-{{ if .Weight }}
-  {{ $index = mod (sub .Weight 1) 3 }}
-{{ end }}
 <div class="bg-body dark:bg-darkmode-body">
   {{ $image:= .Params.image }}
   {{ if $image }}
-    <div class="min-h-[400px] md:min-h-[500px] relative mb-10 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-blue-950">
+    <div class="min-h-[450px] md:min-h-[600px] relative mb-10 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-blue-950">
       <!-- Image and Title Section -->
       <div class="relative">
         <a href="{{ .RelPermalink }}" class="block">
           {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full h-48 md:h-64 lg:h-72 rounded-t-lg object-none") }}
-          <div class="absolute inset-0 bg-blue-300/40 rounded-t-lg"></div>
+          <div class="absolute inset-0 bg-blue-300/70 rounded-t-lg"></div>
           <h1 class="absolute top-0 inset-x-0 p-3 md:p-4 text-2xl md:text-2xl lg:text-4xl font-bold text-blue-950">
             {{ .Title }}
           </h1>
@@ -20,7 +14,7 @@
       </div>
       
       <!-- Content Section -->
-      <div class="p-4 md:p-6 bg-slate-100/90 dark:bg-blue-950 rounded-b-lg">
+      <div class="p-4 md:p-6 bg-slate-100 dark:bg-blue-950 rounded-b-lg">
         <p class="mb-4 md:mb-6 text-sm md:text-base text-slate-800 dark:text-slate-100">{{ .Summary }}</p>
         <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
           {{ i18n "read_more" }}...
