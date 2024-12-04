@@ -84,6 +84,22 @@ a.nav-link {
 }
 
 .content :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  color: darkslateblue !important;
-  background-color: lightsteelblue !important;
+ color: #ffffff !important;
+ background-color: #0a2449 !important;
+ padding: 1.5rem !important;
+ font-size: 0.95rem !important;
+ line-height: 1.6 !important;
+ border: 1px solid #1e3a5f !important;
+ border-radius: 0.5rem !important;
+ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+ box-shadow: 0 2px 4px rgba(10, 36, 73, 0.2) !important;
+}
+
+.prose pre {
+ color: #ffffff !important;
+ background-color: rgba(10, 36, 73, 0.95) !important;
+ padding: 1.5rem !important;
+ font-size: 0.95rem !important;
+ line-height: 1.5 !important;
+ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }

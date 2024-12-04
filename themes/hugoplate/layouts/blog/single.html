@@ -1,53 +1,41 @@
 {{ define "main" }}
-<section class="section pt-7">
-  <div class="container">
-    <div class="row">
-
-      <article class="px-4 md:px-6">
-        <!-- Header Image and Title -->
-        <div class="relative mb-6 md:mb-10">
-          <a href="{{ .RelPermalink }}" class="block">
-            {{ $image:= .Params.image }}
-            {{ if $image }}
-
-            {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full h-48 md:h-64 lg:h-72 rounded object-cover") }}
-            {{end}}
-            <h1 class="absolute bottom-0 inset-x-0 p-4 text-lg md:text-2xl lg:text-3xl font-bold text-pacifica-blue bg-blue-100 bg-opacity-50 rounded-b">
-              {{ .Title }}
-            </h1>
-          </a>
-        </div>
-
-        <!-- Meta Information -->
-        <div class="flex flex-col space-y-3 mb-6">
-          <div class="flex items-center">
-            <i class="fa-regular fa-circle-user mr-2"></i>
-            <a href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.author }}</a>
-          </div>
-
-          {{ if .Params.categories }}
-          <div class="flex items-center flex-wrap">
-            <i class="fa-regular fa-folder mr-2"></i>
-            {{ range $i, $p := .Params.categories }}
-            <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/" class="mr-1">
-              {{ . }}{{ if ne $i (sub (len $.Params.categories) 1) }}, {{ end }}
-            </a>
-            {{ end }}
-          </div>
-          {{ end }}
-
-          <div class="flex items-center">
-            <i class="fa-regular fa-clock mr-2"></i>
-            <time>{{ time.Format ":date_long" .PublishDate }}</time>
-          </div>
-        </div>
-
-        <!-- Content -->
-        <div class="content prose dark:prose-invert max-w-none mb-8">
-          {{ .Content }}
-        </div>
-      </article>
-    </section>
+<article class="max-w-4xl mx-auto px-4 md:px-6 py-12">
+  {{ if .Params.image }}
+  <div class="mb-8">
+    <div class="relative aspect-[21/9] rounded-2xl overflow-hidden">
+      {{ partial "image" (dict "Src" .Params.image "Alt" .Title "Class" "w-full h-full object-none") }}
+      <div class="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-300/70 to-blue-300/50"></div>
+      <h1 class="absolute bottom-0 inset-x-0 p-8 md:p-10 font-mono text-4xl md:text-5xl font-bold text-blue-950 leading-tight">
+        {{ .Title }}
+      </h1>
+    </div>
   </div>
-</div>
-{{end}}
+  {{ end }}
+  <div class="flex flex-wrap gap-6 mb-8 font-mono text-lg text-slate-600 dark:text-slate-400">
+    <time class="flex items-center">
+      <i class="fa-regular fa-clock mr-2"></i>
+      {{ time.Format "January 2, 2006" .PublishDate }}
+    </time>
+    {{ with .Params.author }}
+    <a href="{{ `authors/` | relLangURL }}{{ . | urlize }}/" class="flex items-center hover:text-blue-600">
+      <i class="fa-regular fa-circle-user mr-2"></i>
+      {{ . }}
+    </a>
+    {{ end }}
+    {{ if .Params.categories }}
+    <div class="flex items-center gap-2">
+      <i class="fa-regular fa-folder"></i>
+      {{ range $i, $p := .Params.categories }}
+      <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/" 
+         class="hover:text-blue-600 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded">
+        {{ . }}{{ if ne $i (sub (len $.Params.categories) 1) }}, {{ end }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <div class="prose dark:prose-invert max-w-none font-mono">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
