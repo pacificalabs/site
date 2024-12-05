@@ -1,16 +1,18 @@
 {{ define "main" }}
 {{ partial "page-header" . }}
-
 <section class="section" style="background-color: #020659;">
   <div class="container">
     <div class="row">
       <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
-        <h2 class="mt-4 mb-4" style="color: #feddbf;">
-          {{ .Params.aboutTitle | markdownify }}
-        </h2>
-        <h6 class="mt-4 mb-4" style="color: #feddbf;">
-          {{ .Params.aboutDescription | markdownify }}
-        </h6>
+        <!-- Added padding for mobile -->
+        <div class="px-4 sm:px-0">
+          <h2 class="mt-4 mb-4 text-2xl sm:text-3xl" style="color: #feddbf;">
+            {{ .Params.aboutTitle | markdownify }}
+          </h2>
+          <h6 class="mt-4 mb-4 text-sm sm:text-base" style="color: #feddbf;">
+            {{ .Params.aboutDescription | markdownify }}
+          </h6>
+        </div>
       </div>
     </div>
   </div>
@@ -20,38 +22,42 @@
   <div class="container">
     <div class="row items-center justify-between">
       <div
-      class="mb:md-0 {{ if (modBool $i 1) }} md:order-1 {{ end }}{{ if strings.Contains .title "stack" }}stack{{ end }} md:col-5 mb-6">
-      {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+        class="mb:md-0 {{ if (modBool $i 1) }} md:order-1 {{ end }}{{ if strings.Contains .title "stack" }}stack{{ end }} md:col-5 mb-6">
+        <!-- Added responsive image handling -->
+        <div class="px-4 sm:px-0">
+          {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+        </div>
+      </div>
+      <div
+        class="{{ if (modBool $i 2) }}md:order-2{{ end }} md:col-7 lg:col-6">
+        <!-- Added mobile padding and text adjustments -->
+        <div class="px-4 sm:px-0">
+          <h3 class="mb-4 text-xl sm:text-2xl">
+            {{ .title | markdownify }}
+          </h3>
+          <p class="mb-8 text-base sm:text-lg">
+            {{ .content | markdownify }}
+          </p>
+          <ul class="space-y-4">
+            {{ range .bulletpoints }}
+            <li class="relative pl-6">
+              <i class="fa fa-check absolute left-0 top-1.5"></i>
+              <div class="text-sm sm:text-base">{{ . | markdownify }}</div>
+            </li>
+            {{ end }}
+          </ul>
+          {{ with .button }}
+          {{ if .enable }}
+          <a class="btn btn-primary mt-6 text-sm sm:text-base" href="{{ .link | absURL }}">
+            {{ .label }}
+            <i class="fa fa-arrow-right pl-2"></i>
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
     </div>
-    <div
-    class="{{ if (modBool $i 2) }}
-    md:order-2
-    {{ end }} md:col-7 lg:col-6">
-    <h3 class="mb-4">
-      {{ .title | markdownify }}
-    </h3>
-    <p class="mb-8 text-lg">
-      {{ .content | markdownify }}
-    </p>
-    <ul>
-      {{ range .bulletpoints }}
-      <li class="relative mb-4 pl-6">
-        <i class="fa fa-check absolute left-0 top-1.5"></i>
-        {{ . | markdownify }}
-      </li>
-      {{ end }}
-    </ul>
-    {{ with .button }}
-    {{ if .enable }}
-    <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-      {{ .label }}
-      <i class="fa fa-arrow-right pl-2"></i>
-    </a>
-    {{ end }}
-    {{ end }}
   </div>
-</div>
-</div>
 </section>
 {{ end }}
 {{ partial "components/testimonials" . }}
