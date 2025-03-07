@@ -9,6 +9,7 @@ const purgecss = {
     ];
   },
   safelist: [
+    /^animate__/,  // Add animate.css classes
     /^swiper-/,
     /^lb-/,
     /^gl/,

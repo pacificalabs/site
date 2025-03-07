@@ -144,6 +144,9 @@ lazy = true
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/icons.css"
 lazy = true
+[[params.plugins.css]]
+link = "css/vendor/animate.css"
+lazy = false
 
 # JS Plugins
 [[params.plugins.js]]

@@ -13,9 +13,12 @@
 
     <!-- style (always cache it) -->
     {{ partialCached "essentials/style.html" . }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
   </head>
 
-  <body class="container mx-auto">
+  <body class="container mx-auto parkinsans-header">
     <!-- cache partial only in production -->
     {{ if hugo.IsProduction }}
       {{ partialCached "preloader.html" . }}

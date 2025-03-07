@@ -1,6 +1,6 @@
 ---
 banner:
-  title: "Grow Your Business.Faster."
+  title: "Grow Your Business. Quickly."
   content: "With our precision-engineered apps & services."
   image: "images/logo2023.png"
   button:
