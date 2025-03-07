@@ -10,15 +10,14 @@
           "Src" .image 
           "Alt" "Banner image" 
           "Loading" "eager" 
-          "Class" "mx-auto w-full" 
+          "Class" "animate__animated animate__fadeIn mx-auto w-full" 
           "DisplayXL" "700x" 
           ) }}
       </div>
       <div class="w-full text-center">
-        <h1 class="my-6 text-2xl lg:text-4xl font-bold">
-          {{ .title | markdownify }}
-        </h1>
-        <p class="mb-4 text-md lg:text-base">
+        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-2xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
+        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-2xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</h1>
+                <p class="animate__animated animate__fadeIn animate__slower mb-4 text-md lg:text-base">
           {{ .content | markdownify }}
         </p>
       </div>

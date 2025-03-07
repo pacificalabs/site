@@ -1,48 +1,74 @@
 <!doctype html>
 <html
-  itemscope
-  class="{{- if not site.Params.theme_switcher -}}
-    {{- site.Params.theme_default -}}
-  {{- end -}}"
-  lang="{{ site.LanguageCode | default `en-US` }}"
-  itemtype="http://schema.org/WebPage">
-  <head>
-    <!-- head (don't cache it) -->
-    {{ partial "essentials/head.html" . }}
+itemscope
+class="{{- if not site.Params.theme_switcher -}}
+{{- site.Params.theme_default -}}
+{{- end -}}"
+lang="{{ site.LanguageCode | default `en-US` }}"
+itemtype="http://schema.org/WebPage">
+<head>
+  <!-- head (don't cache it) -->
+  {{ partial "essentials/head.html" . }}
 
 
-    <!-- style (always cache it) -->
-    {{ partialCached "essentials/style.html" . }}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
-  </head>
+  <!-- style (always cache it) -->
+  {{ partialCached "essentials/style.html" . }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+</head>
 
-  <body class="container mx-auto parkinsans-header">
-    <!-- cache partial only in production -->
-    {{ if hugo.IsProduction }}
-      {{ partialCached "preloader.html" . }}
-      {{ partialCached "gtm-noscript.html" . }}
-    {{ else }}
-      {{ partial "preloader.html" . }}
-
-
-      <!-- tailwind size indicator -->
-      {{ partial "components/tw-size-indicator.html" . }}
-    {{ end }}
+<body class="container mx-auto parkinsans-header">
+  <!-- cache partial only in production -->
+  {{ if hugo.IsProduction }}
+  {{ partialCached "preloader.html" . }}
+  {{ partialCached "gtm-noscript.html" . }}
+  {{ else }}
+  {{ partial "preloader.html" . }}
 
 
-    <!-- header (don't cache it) -->
-    {{ partial "essentials/header.html" . }}
-    {{ partial "search-modal.html" (dict "Context" . ) }}
+  <!-- tailwind size indicator -->
+  {{ partial "components/tw-size-indicator.html" . }}
+  {{ end }}
 
 
-    <main>
-      {{ block "main" . }}{{ end }}
-    </main>
-    <!-- footer -->
-    <!-- {{ partial "essentials/footer.html" . }} -->
-    <!-- script (always cache it) -->
-    {{ partialCached "essentials/script.html" . }}
-  </body>
-</html>
+  <!-- header (don't cache it) -->
+  {{ partial "essentials/header.html" . }}
+  {{ partial "search-modal.html" (dict "Context" . ) }}
+
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <!-- footer -->
+  <!-- {{ partial "essentials/footer.html" . }} -->
+  <!-- script (always cache it) -->
+  {{ partialCached "essentials/script.html" . }}
+</body>
+<script type="text/javascript">
+  function cycleWords() {
+    let words = JSON.parse('{{ .Params.banner.words | jsonify | safeJS }}');
+    if (!words || words.length === 0) return; // Prevent errors if no words exist
+
+    const element = document.getElementById("dynamic-word");
+    let index = 0;
+    let totalDuration = 2000; // 3 seconds total
+    let intervalTime = Math.floor(totalDuration / words.length); // Time per word
+
+    function updateWord() {
+      if (index < words.length) {
+        word = words[index]
+        element.textContent = word;
+        index++;
+        setTimeout(updateWord, intervalTime);
+      } else {
+        element.textContent = words[Math.floor(Math.random() * words.length)]; // Final random word
+      }
+    }
+    updateWord();
+  }
+// Run when the page loads
+    document.addEventListener("DOMContentLoaded", cycleWords);
+
+  </script>
+  </html>
