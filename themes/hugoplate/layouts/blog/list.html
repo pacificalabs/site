@@ -6,9 +6,15 @@
       <!-- blog posts -->
       <div class="lg:col-12">
         <div class="row">
-          {{ $paginator:= .Paginate .RegularPages }}
+          {{ $filteredPages := slice }}
+          {{ range .RegularPages }}
+            {{ if not (in .Params.categories "work") }}
+              {{ $filteredPages = $filteredPages | append . }}
+            {{ end }}
+          {{ end }}
+          {{ $paginator := .Paginate $filteredPages }}
           {{ range $paginator.Pages }}
-          <div class="md:col-4">
+          <div class="md:col-6">
             {{ partial "components/blog-card" . }}
           </div>
           {{ end }}
@@ -16,9 +22,9 @@
         {{ partial "components/pagination.html" . }}
       </div>
     </div>
-        <div class="row gx-5">
+    <div class="row gx-5">
       <div class="lg:col-12">
-        {{ $widget:= site.Params.widgets.sidebar }}
+        {{ $widget := site.Params.widgets.sidebar }}
         {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
       </div>
     </div>

@@ -21,3 +21,40 @@
 .shadow {
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
 }
+
+.bg-gradient-to-b {
+  background-image: url("/site/images/shapes-light.png") !important;
+}
+
+.py-14 {
+  padding-top: 7rem !important;
+  padding-bottom: 7rem !important;
+}
+
+picture {
+  zoom: 1.4;
+}
+
+/*#herologo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+*/
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container img {
+  position: relative; /* Needed to apply 'top' */
+  top: -34px;
+  height: 68px;
+}

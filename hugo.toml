@@ -31,6 +31,10 @@ shortname = 'themefisher-template' # we use disqus to show comments in blog post
 [permalinks.page]
 "pages" = "/:slugorfilename/"
 
+[permalinks]
+  categories = "/categories/:slug/"
+
+
 ########################## Contact Form ##########################
 
 formspree_form_id = "xyzydpza"
@@ -176,3 +180,9 @@ lazy = true
 [[params.plugins.js]]
 link = "plugins/youtube-lite.js"
 lazy = true
+
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+

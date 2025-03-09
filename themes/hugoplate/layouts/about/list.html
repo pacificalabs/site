@@ -1,15 +1,15 @@
 {{ define "main" }}
 {{ partial "page-header" . }}
-<section class="section" style="background-color: #020659;">
+<section class="section-sm" style="background-color: #020659;">
   <div class="container">
     <div class="row">
       <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
         <!-- Added padding for mobile -->
         <div class="px-4 sm:px-0">
-          <h2 class="mt-4 mb-4 text-2xl sm:text-3xl" style="color: #feddbf;">
+          <h2 class="mt-4 mb-4 sm:text-2xl md:text-6xl" style="color: #feddbf;">
             {{ .Params.aboutTitle | markdownify }}
           </h2>
-          <h6 class="mt-4 mb-4 text-sm sm:text-base" style="color: #feddbf;">
+          <h6 class="mt-4 mb-4 md:text-3xl" style="color: #feddbf;">
             {{ .Params.aboutDescription | markdownify }}
           </h6>
         </div>
@@ -18,7 +18,7 @@
   </div>
 </section>
 {{ range $i, $e:= .Params.explainers }}
-<section class="section-sm {{ if not (modBool $i 2) }}bg-gradient{{ end }}">
+<section class="section-sm">
   <div class="container">
     <div class="row items-center justify-between">
       <div
@@ -32,7 +32,7 @@
         class="{{ if (modBool $i 2) }}md:order-2{{ end }} md:col-7 lg:col-6">
         <!-- Added mobile padding and text adjustments -->
         <div class="px-4 sm:px-0">
-          <h3 class="mb-4 text-xl sm:text-2xl">
+          <h3 class="mb-4 md:text-6xl sm:text-4xl">
             {{ .title | markdownify }}
           </h3>
           <p class="mb-8 text-base sm:text-lg">
