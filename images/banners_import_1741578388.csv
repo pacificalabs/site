@@ -1,0 +1,11 @@
+image,link_url,description,location,height,width,company_id,status
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-07-30-00.jpg,https://example.com/0,Banner Number 0,header,400,400,2,Row 1: Company must exist
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-07-32-00.jpg,https://example.com/1,Banner Number 1,home-under-find,400,400,2,Row 2: Company must exist
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-08-34-00.jpg,https://example.com/2,Banner Number 2,sidebar,300,250,3,Imported successfully
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-08-36-00.jpg,https://example.com/3,Banner Number 3,footer,728,90,4,Row 4: Company must exist
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-09-38-00.jpg,https://example.com/4,Banner Number 4,homepage,1200,600,5,Row 5: Company must exist
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-09-40-00.jpg,https://example.com/5,Banner Number 5,header,400,400,2,Row 6: Company must exist
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-10-42-00.jpg,https://example.com/6,Banner Number 6,home-under-find,400,400,2,Row 7: Company must exist
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-10-44-00.jpg,https://example.com/7,Banner Number 7,sidebar,300,250,3,Imported successfully
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-11-46-00.jpg,https://example.com/8,Banner Number 8,footer,728,90,4,Row 9: Company must exist
+/Users/tarunpacifica/Downloads/banners/PHOTO-2024-10-16-11-48-00.jpg,https://example.com/9,Banner Number 9,homepage,1200,600,5,Row 10: Company must exist
