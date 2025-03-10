@@ -1,36 +1,36 @@
 <div class="bg-body dark:bg-darkmode-body">
   {{ $image:= .Params.image }}
   {{ if $image }}
-  <div class="min-h-[400px] relative mb-5 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-blue-950">
+  {{ $image_url := printf "%s%s" site.BaseURL $image }}
+  <div class="md:min-h-[400px] relative mb-5 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-blue-950">
     <!-- Image and Title Section -->
     <a href="{{ .RelPermalink }}" class="block">
-
       <div class="relative">
-        {{ partial "image" (dict "Src" $image "Alt" .Title "Class" "w-full h-48 md:h-64 lg:h-72 rounded-t-lg object-none") }}
+        <div class="relative h-48 md:h-64 lg:h-72 rounded-t-lg" style="background-image: url({{ $image_url }}); background-size: fit; background-position: center;">
+          {{ if not (in .Params.categories "work") }}
+          <ul>
+            <div class="absolute inset-0 bg-blue-300/70 rounded-t-lg"></div>
+          </ul>
+          {{ else }}
+          <div class="absolute inset-0 rounded-t-lg bg-{{ .Params.Colour }}-200/50 "></div>
+          {{ end }}
+          <div class="absolute inset-0 flex flex-col justify-between p-3 md:p-4">
+            <h1 class="text-2xl md:text-2xl lg:text-4xl font-bold text-blue-950">
+              {{ .Title }}<br>
+              <div class="mt-2">{{ .Params.Subtitle }}</div>
+            </h1>
+          </div>
+        </div>      
+        <!-- Content Section -->
         {{ if not (in .Params.categories "work") }}
-        <ul>
-          <div class="absolute inset-0 bg-blue-300/70 rounded-t-lg"></div>
-        </ul>
-        {{ else }}
-        <div class="absolute inset-0 rounded-t-lg bg-{{ .Params.Colour }}-200/50 "></div>
+        <div class="p-4 md:p-6 bg-slate-100 dark:bg-blue-950 rounded-b-lg">
+          <p class="mb-4 md:mb-6 text-sm md:text-base text-slate-800 dark:text-slate-100">{{ .Summary }}</p>
+          <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
+            {{ i18n "read_more" }}...
+          </a>
+        </div>
         {{ end }}
-        <h1 class="absolute top-0 inset-x-0 p-3 md:p-4 text-2xl md:text-2xl lg:text-4xl font-bold text-blue-950">
-          {{ .Title }}<br>
-          <div class="mt-2">{{ .Params.Subtitle }}</div>
-        </h1>
-        <h5 class="absolute bottom-0 inset-x-0 p-3 md:p-4 text-xl md:text-xl lg:text-xl font-bold text-blue-950">
-          {{ .Params.Headline }}
-        </h5>
-      </div>      
-      <!-- Content Section -->
-              {{ if not (in .Params.categories "work") }}
-      <div class="p-4 md:p-6 bg-slate-100 dark:bg-blue-950 rounded-b-lg">
-        <p class="mb-4 md:mb-6 text-sm md:text-base text-slate-800 dark:text-slate-100">{{ .Summary }}</p>
-        <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
-          {{ i18n "read_more" }}...
-        </a>
       </div>
-      {{ end }}
     </a>
   </div>
   {{ end }}
