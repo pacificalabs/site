@@ -1,6 +1,8 @@
 ---
-title: "Portfolio Example 5"
+title: "Portfolio Example 3"
 meta_title: ""
+subtitle: "Shopping Gateway"
+colour: green
 date: 2022-03-02T05:00:00Z
 description: "We provide tips to make the setup of HABTM associations painfree."
 image: "/images/bck.jpg"
