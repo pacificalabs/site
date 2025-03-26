@@ -23,7 +23,11 @@
 }
 
 .bg-gradient-to-b {
-  background-image: url("/site/images/shapes-light.png") !important;
+  background-image: url("/site/images/logo2023.png") !important;
+  background-size: cover;            /* Zoom and cover the full container */
+  background-position: center;       /* Center the image */
+  background-repeat: no-repeat;      /* Prevent tiling */
+  width: 100%;                       /* Full width */
 }
 
 .py-14 {
@@ -55,6 +59,6 @@ picture {
 
 .flex-container img {
   position: relative; /* Needed to apply 'top' */
-  top: -34px;
-  height: 68px;
+  height: auto;
+  width: 20rem;
 }

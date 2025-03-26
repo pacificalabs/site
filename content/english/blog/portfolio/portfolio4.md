@@ -1,6 +1,8 @@
 ---
-title: "Portfolio Example 2"
+title: "Portfolio Example 4"
 meta_title: ""
+subtitle: "Inventory Management"
+colour: yellow
 date: 2022-03-02T05:00:00Z
 description: "We provide tips to make the setup of HABTM associations painfree."
 image: "/images/bck.jpg"
