@@ -14,3 +14,6 @@ jsconfig.json
 hugo_stats.json
 go.sum
 yarn.lock
+diff.txt
+status.txt
+tree.txt
