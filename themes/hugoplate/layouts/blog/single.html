@@ -5,14 +5,14 @@
   {{ $image_url := printf "%s%s" site.BaseURL $image }}
   <div class="mb-8">
     <div class="relative aspect-[21/9] rounded-2xl overflow-hidden"style="background-image: url({{ $image_url }}); background-size: 180%; background-position: center;">
-          {{ if not (in .Params.categories "work") }}
-          <ul>
-            <div class="absolute inset-0 bg-blue-300/70 dark:bg-blue-900/70 rounded-t-lg"></div>
-          </ul>
-          {{ else }}
-          <div class="absolute inset-0 rounded-t-lg bg-{{ .Params.Colour }}-200/60 dark:bg-{{ .Params.Colour }}-900/70"></div>
-          {{ end }}
-      <h1 class="absolute bottom-0 inset-x-0 p-8 md:p-10 font-mono text-4xl md:text-5xl font-bold text-blue-950 leading-tight">
+      {{ if not (in .Params.categories "work") }}
+      <ul>
+        <div class="absolute inset-0 bg-blue-300/70 dark:bg-blue-900/70 rounded-t-lg"></div>
+      </ul>
+      {{ else }}
+      <div class="absolute inset-0 rounded-t-lg bg-{{ .Params.Colour }}-200/60 dark:bg-{{ .Params.Colour }}-900/70"></div>
+      {{ end }}
+      <h1 class="absolute bottom-0 inset-x-0 p-8 md:p-10 font-mono text-3xl lg:text-5xl font-bold text-blue-950 leading-tight">
         {{ .Title }}
       </h1>
     </div>
@@ -34,15 +34,15 @@
       <i class="fa-regular fa-folder"></i>
       {{ range $i, $p := .Params.categories }}
       <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/" 
-         class="hover:text-blue-600 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded">
-        {{ . }}{{ if ne $i (sub (len $.Params.categories) 1) }}, {{ end }}
-      </a>
-      {{ end }}
-    </div>
+      class="hover:text-blue-600 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded">
+      {{ . }}{{ if ne $i (sub (len $.Params.categories) 1) }}, {{ end }}
+    </a>
     {{ end }}
   </div>
-  <div class="prose dark:prose-invert max-w-none font-mono">
-    {{ .Content }}
-  </div>
+  {{ end }}
+</div>
+<div class="prose dark:prose-invert max-w-none font-mono">
+  {{ .Content }}
+</div>
 </article>
 {{ end }}
