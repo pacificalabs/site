@@ -11,7 +11,6 @@ draft: false
 ---
 The HABTM association is often confusing and can lead to frustration if defined incorrectly. Here find instructions on how to set it correctly. 
 
-
 ### ***Why this matters:***
 
 One of the more complicated associations.....
