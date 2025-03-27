@@ -9,10 +9,10 @@
         <div class="relative h-48 md:h-64 lg:h-72 rounded-t-lg" style="background-image: url({{ $image_url }}); background-size: fit; background-position: center;">
           {{ if not (in .Params.categories "work") }}
           <ul>
-            <div class="absolute inset-0 bg-blue-300/70 rounded-t-lg"></div>
+            <div class="absolute inset-0 bg-blue-300/70 dark:bg-blue-900/70 rounded-t-lg"></div>
           </ul>
           {{ else }}
-          <div class="absolute inset-0 rounded-t-lg bg-{{ .Params.Colour }}-200/50 "></div>
+          <div class="absolute inset-0 rounded-t-lg bg-{{ .Params.Colour }}-200/60 dark:bg-{{ .Params.Colour }}-900/70"></div>
           {{ end }}
           <div class="absolute inset-0 flex flex-col justify-between p-3 md:p-4">
             <h1 class="text-center text-2xl md:text-2xl lg:text-4xl font-bold text-blue-950">
