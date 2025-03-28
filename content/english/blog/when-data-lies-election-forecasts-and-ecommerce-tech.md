@@ -2,7 +2,7 @@
 title: "When Data Lies: Election Forecasts and Ecommerce Tech"
 meta_title: "Pacifica Labs | Data Quality in Ecommerce Technology Stacks"
 date: 2024-11-23T05:00:00Z
-description: "What election forecast failures teach us about data quality in ecommerce technology."
+description: "What election forecast failures teach us about data quality in ecommerce."
 image: "/images/bck.jpg"
 categories: ["Technology", "Data Analysis", "CTO"]
 tags: ["ecommerce","data-quality","technology-stack","business-intelligence","forecasting"]
