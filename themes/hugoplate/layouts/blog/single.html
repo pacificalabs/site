@@ -1,11 +1,18 @@
 {{ define "main" }}
 <article class="max-w-4xl mx-auto px-4 md:px-6 py-12">
   {{ if .Params.image }}
+  {{ $image:= .Params.image }}
+  {{ $image_url := printf "%s%s" site.BaseURL $image }}
   <div class="mb-8">
-    <div class="relative aspect-[21/9] rounded-2xl overflow-hidden">
-      {{ partial "image" (dict "Src" .Params.image "Alt" .Title "Class" "w-full h-full object-none") }}
-      <div class="absolute inset-0 bg-gradient-to-t from-blue-300/90 via-blue-300/70 to-blue-300/50"></div>
-      <h1 class="absolute bottom-0 inset-x-0 p-8 md:p-10 font-mono text-4xl md:text-5xl font-bold text-blue-950 leading-tight">
+    <div class="relative aspect-[21/9] rounded-2xl overflow-hidden"style="background-image: url({{ $image_url }}); background-size: 180%; background-position: center;">
+      {{ if not (in .Params.categories "work") }}
+      <ul>
+        <div class="absolute inset-0 bg-blue-300/70 dark:bg-blue-900/70 rounded-t-lg"></div>
+      </ul>
+      {{ else }}
+      <div class="absolute inset-0 rounded-t-lg bg-{{ .Params.Colour }}-200/60 dark:bg-{{ .Params.Colour }}-900/70"></div>
+      {{ end }}
+      <h1 class="absolute bottom-0 inset-x-0 p-8 md:p-10 font-mono text-3xl lg:text-5xl font-bold text-blue-950 leading-tight">
         {{ .Title }}
       </h1>
     </div>
