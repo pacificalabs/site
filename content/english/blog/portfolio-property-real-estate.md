@@ -1,10 +1,10 @@
 ---
-title: "Portfolio Example 2"
+title: "Property & Real Estate"
 meta_title: ""
-subtitle: "Web Scraping Application"
+subtitle: "Display site for Real Estate Professionals"
 colour: red
 date: 2022-03-02T05:00:00Z
-description: "We provide tips to make the setup of HABTM associations painfree."
+description: "B2B application build to showcase Property"
 image: "/images/bck.jpg"
 categories: ["work"]
 tags: ["ruby-on-rails","active-record","developer","database","back-end"]

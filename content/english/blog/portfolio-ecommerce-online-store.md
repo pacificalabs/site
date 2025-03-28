@@ -1,10 +1,10 @@
 ---
-title: "Portfolio Example 6"
+title: "eCommerce"
 meta_title: ""
-subtitle: "Document Management"
-colour: cyan
+subtitle: "Online Store"
+colour: green
 date: 2022-03-02T05:00:00Z
-description: "We provide tips to make the setup of HABTM associations painfree."
+description: "A fully functional online store"
 image: "/images/bck.jpg"
 categories: ["work"]
 tags: ["ruby-on-rails","active-record","developer","database","back-end"]

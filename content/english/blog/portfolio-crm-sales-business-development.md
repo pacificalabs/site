@@ -1,10 +1,10 @@
 ---
-title: "Portfolio Example 3"
+title: "Customer Relationship Management (CRM)"
 meta_title: ""
-subtitle: "Shopping Gateway"
-colour: green
+subtitle: "Smart Messaging Application"
+colour: orange
 date: 2022-03-02T05:00:00Z
-description: "We provide tips to make the setup of HABTM associations painfree."
+description: "MultiChannel Smart Messaging Tool"
 image: "/images/bck.jpg"
 categories: ["work"]
 tags: ["ruby-on-rails","active-record","developer","database","back-end"]

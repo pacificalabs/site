@@ -1,10 +1,10 @@
 ---
-title: "Portfolio Example 4"
+title: "Supply Chain"
 meta_title: ""
-subtitle: "Inventory Management"
+subtitle: "Inventory Management App"
 colour: yellow
 date: 2022-03-02T05:00:00Z
-description: "We provide tips to make the setup of HABTM associations painfree."
+description: "We built a dynamic Inventory Manager."
 image: "/images/bck.jpg"
 categories: ["work"]
 tags: ["ruby-on-rails","active-record","developer","database","back-end"]
