@@ -27,15 +27,15 @@
       <i class="fa-regular fa-folder"></i>
       {{ range $i, $p := .Params.categories }}
       <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/" 
-         class="hover:text-blue-600 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded">
-        {{ . }}{{ if ne $i (sub (len $.Params.categories) 1) }}, {{ end }}
-      </a>
-      {{ end }}
-    </div>
+      class="hover:text-blue-600 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded">
+      {{ . }}{{ if ne $i (sub (len $.Params.categories) 1) }}, {{ end }}
+    </a>
     {{ end }}
   </div>
-  <div class="prose dark:prose-invert max-w-none font-mono">
-    {{ .Content }}
-  </div>
+  {{ end }}
+</div>
+<div class="prose dark:prose-invert max-w-none font-mono">
+  {{ .Content }}
+</div>
 </article>
 {{ end }}
