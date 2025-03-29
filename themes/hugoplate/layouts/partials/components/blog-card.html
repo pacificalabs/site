@@ -1,30 +1,32 @@
-<div class="bg-body dark:bg-darkmode-body">
-  {{ $image:= .Params.image }}
-  {{ if $image }}
-  {{ $image_url := printf "%s%s" site.BaseURL $image }}
-  <div class="md:min-h-[400px] relative mb-5 rounded-lg transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-blue-950">
+{{ $image := .Params.image }}
+{{ if $image }}
+{{ $image_url := printf "%s%s" site.BaseURL $image }}
+<div class="bg-body dark:bg-darkmode-body rounded-md">
+  <div class="md:min-h-[400px] relative mb-5 transition-shadow hover:shadow-lg group hover:bg-slate-100/90 dark:hover:bg-blue-950">
     <a href="{{ .RelPermalink }}" class="block">
-      <div class="relative">
-        <div class="relative h-48 md:h-64 lg:h-72 rounded-sm" style="background-image: url({{ $image_url }}); background-size: 200%; background-position: center;">
+      <div class="relative rounded-md" style="background-image: url({{ $image_url }}); background-size: 300%; background-position: center;">
+        <div class="relative h-50 md:h-64 lg:h-72">
           {{ if not (in .Params.categories "work") }}
-          <ul>
-            <div class="absolute inset-0 bg-blue-300/70 dark:bg-blue-900/70 rounded-sm"></div>
-          </ul>
+          <div class="absolute inset-0 rounded-t-md bg-blue-300/70 dark:bg-blue-900/70"></div>
           {{ else }}
-          <div class="absolute inset-0 rounded-sm bg-{{ .Params.Colour }}-200/60 dark:bg-{{ .Params.Colour }}-900/70"></div>
+          <div class="absolute inset-0 rounded-t-md bg-{{ .Params.Colour }}-200/70 dark:bg-{{ .Params.Colour }}-900/70"></div>
           {{ end }}
-          <div class="absolute inset-0 flex flex-col justify-between p-3 md:p-4">
-            <h1 class="text-center text-3xl md:text-4xl font-bold text-blue-950">{{ .Title }}</h1>
-            <h1 class="text-center text-lg md:text-3xl font-bold text-blue-950 font-medium">{{ .Params.Subtitle }}</h1>
+          <div class="relative inset-0 flex flex-col justify-between p-3 md:p-4">
+            <h1 class="text-center my-6 text-3xl md:text-4xl font-bold text-blue-950">{{ .Title }}</h1>
+            <h1 class="text-center my-2 text-lg md:text-3xl font-bold text-blue-950 font-medium">{{ .Params.Subtitle }}</h1>
           </div>
-        </div>      
-        <div class="p-4 md:p-6 bg-{{ default "bg-slate-100" .Params.Colour }}-200/60 dark:bg-blue-950 rounded-b-lg">
-          <p class="mb-4 md:mb-6 text-md text-center md:text-base/9 text-slate-800 dark:text-slate-100">{{ .Description }}</p>
-          <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
-          </a>
         </div>
-      </div>
-    </a>
+        {{ if not (in .Params.categories "work") }}
+        <div class="p-4 md:p-6 bg-blue-300/70 dark:bg-blue-900/70 rounded-b-md">
+          {{ else }}
+          <div class="p-4 md:p-6 bg-{{ .Params.Colour }}-200/70 dark:bg-{{ .Params.Colour }}-900/70 rounded-b-md">
+            {{ end }} 
+            <p class="mb-4 md:mb-6 text-lg text-center md:text-base/9 text-slate-800 dark:text-slate-100">{{ .Description }}</p>
+            <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
+            </a>
+          </div>
+        </div>
+      </a>
+    </div>
+    {{ end }}
   </div>
-  {{ end }}
-</div>
