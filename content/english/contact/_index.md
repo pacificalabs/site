@@ -1,5 +1,5 @@
 ---
-title: "Hi!"
+title: "Contact Us"
 meta_title: ""
 description: "this is meta description"
 draft: false
