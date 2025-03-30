@@ -15,14 +15,13 @@
           ) }}
       </div>
       <div class="w-full text-center">
-        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-2xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
-        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-2xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</h1>
-                <p class="animate__animated animate__fadeIn animate__slower mb-4 text-md lg:text-base">
+        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-4xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
+        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-3xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</h1>
+                <p class="animate__animated animate__fadeIn animate__slower mb-4 text-xl lg:text-base">
           {{ .content | markdownify }}
         </p>
       </div>
     </div>
-
     <!-- Mobile Navigation -->
     <div id="mobile-nav" class="block lg:hidden w-full px-8 mb-8">
       <div class="flex flex-col items-center space-y-6">
