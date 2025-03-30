@@ -45,28 +45,28 @@
   {{ .Content }}
 </div>
 
-<div class="w-full flex flex-col items-center justify-center text-center p-4 rounded-lg">
+<div class="max-w-4xl flex flex-col items-center justify-center text-center p-1 rounded-lg">
   <h3 class="text-lg font-semibold mb-2">Share with your network!</h3>
-  <div class="flex space-x-4">
+  <div class="flex space-x-2">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" 
-       target="_blank" 
-       class="btn btn-outline-primary btn-sm flex items-center space-x-2">
-      <i class="fab fa-facebook"></i>
-      <span>Facebook</span>
-    </a>
-    <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" 
-       target="_blank" 
-       class="btn btn-outline-primary btn-sm flex items-center space-x-2">
-      <i class="fab fa-twitter"></i>
-      <span>Twitter</span>
-    </a>
-    <a href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}" 
-       target="_blank" 
-       class="btn btn-outline-primary btn-sm flex items-center space-x-2">
-      <i class="fab fa-linkedin"></i>
-      <span>LinkedIn</span>
-    </a>
-  </div>
+    target="_blank" 
+    class="btn btn-outline-primary btn-sm flex items-center space-x-2">
+    <i class="fab fa-facebook"></i>
+    <span>Facebook</span>
+  </a>
+  <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" 
+  target="_blank" 
+  class="btn btn-outline-primary btn-sm flex items-center space-x-2">
+  <i class="fab fa-twitter"></i>
+  <span>Twitter</span>
+</a>
+<a href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}" 
+target="_blank" 
+class="btn btn-outline-primary btn-sm flex items-center space-x-2">
+<i class="fab fa-linkedin"></i>
+<span>LinkedIn</span>
+</a>
+</div>
 </div>
 
 {{ if not (site.Params.navigation_button.enable) }}
