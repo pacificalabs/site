@@ -5,7 +5,7 @@
   <div class="flex-1 flex flex-col items-center w-full max-w-screen-md">
     <!-- Top Section with Image and Text -->
     <div class="flex flex-col items-center w-full px-4">
-      <div class="w-full max-w-[240px] md:max-w-[300px] lg:max-w-[460px] pt-4">
+      <div class="w-full max-w-[20rem] md:max-w-[300px] lg:max-w-[460px] pt-4">
         {{ partial "image" (dict 
           "Src" .image 
           "Alt" "Banner image" 
@@ -15,9 +15,9 @@
           ) }}
       </div>
       <div class="w-full text-center">
-        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-4xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
+        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-4xl lg:text-5xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
         <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-3xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</h1>
-                <p class="animate__animated animate__fadeIn animate__slower mb-4 text-xl lg:text-base">
+                <p class="animate__animated animate__fadeIn animate__slower mb-4 text-2xl lg:text-base">
           {{ .content | markdownify }}
         </p>
       </div>
