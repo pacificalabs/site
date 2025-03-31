@@ -15,8 +15,8 @@
           ) }}
       </div>
       <div class="w-full text-center">
-        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-4xl lg:text-5xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
-        <h1 class="animate__animated animate__fadeIn animate__slow my-6 text-3xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</h1>
+        <h1 class="animate__animated animate__fadeIn animate__slower my-6 text-4xl lg:text-5xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
+        <p class="animate__animated animate__fadeIn animate__slower my-6 text-3xl lg:text-4xl italic">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</p>
                 <p class="animate__animated animate__fadeIn animate__slower mb-4 text-2xl lg:text-base">
           {{ .content | markdownify }}
         </p>
