@@ -22,8 +22,11 @@
           <div class="p-4 md:p-6 bg-{{ .Params.Colour }}-200/70 dark:bg-{{ .Params.Colour }}-900/70 rounded-b-md">
             {{ end }} 
             <p class="px-4 mb-4 md:mb-6 text-xl text-center md:text-base/9 text-slate-800 dark:text-slate-100">{{ .Description }}</p>
-            <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
-            </a>
+            <div class="flex justify-center">
+              <a class="font-semibold text-slate-900 hover:text-slate-700 transition-colors" href="{{ .RelPermalink }}">
+                Read More <i class="fas fa-book-open"></i>
+              </a>
+            </div>
           </div>
         </div>
       </a>
