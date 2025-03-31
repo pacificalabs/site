@@ -5,7 +5,7 @@ banner:
   image: "images/logo2023.png"
   button:
     enable: true
-    label: "Learn more"
+    label: "Contact Us"
     link: "/site/contact"
   words:
     - Faster
@@ -20,15 +20,11 @@ banner:
     - Powerfully
     - Dynamically
     - Effortlessly
-    - Instantly
     - Strategically
     - Decisively
     - Predictably
     - Reliably
     - Sustainably
     - Continuously
-    - Fearlessly
     - Confidently
-    - Relentlessly
-    - Limitlessly
 ---
