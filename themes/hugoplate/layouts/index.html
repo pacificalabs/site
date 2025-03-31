@@ -67,13 +67,13 @@
       {{ if .enable }}
       <div class="mt-6 text-center">
         <a
-          class="btn btn-primary"
+          class="btn"
           href="{{ .link | absURL }}"
           {{ if strings.HasPrefix .link `http` }}
           target="_blank" rel="noopener"
           {{ end }}>
           {{ .label }}
-          <i class="fa fa-arrow-right pl-2"></i>
+          <i class="fa fa-envelope pl-2"></i>
         </a>
       </div>
       {{ end }}
