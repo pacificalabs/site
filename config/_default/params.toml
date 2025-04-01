@@ -27,7 +27,7 @@ google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
 # copyright
-copyright = "Pacifica Labs. Made in Australia"
+copyright = "Pacifica Labs. Made in Australia. Shipped Worldwide."
 
 # Preloader
 # preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader
@@ -57,9 +57,9 @@ show_categories = true
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
 keywords = ["Development", "App", "Software", "Agency", "Ruby on Rails"]
-description = "Software development agency based in Sydney, Australia."
+description = "Software Consultancy based in Sydney, Australia."
 author = "Pacfica Labs"
-image = "images/og-image.png"
+image = "images/logo2023.png"
 
 
 # site verifications
