@@ -6,10 +6,10 @@ name = "Home"
 pageRef = "/"
 weight = 1
 
-# [[main]]
-# name = "About Us"
-# pageRef = "/about"
-# weight = 2
+[[main]]
+name = "About Us"
+pageRef = "/about"
+weight = 2
 
 [[main]]
 name = "Lab Work"
