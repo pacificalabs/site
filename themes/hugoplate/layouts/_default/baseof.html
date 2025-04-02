@@ -46,29 +46,69 @@ itemtype="http://schema.org/WebPage">
   {{ partialCached "essentials/script.html" . }}
 </body>
 <script type="text/javascript">
-  function cycleWords() {
-    let words = JSON.parse('{{ .Params.banner.words | jsonify | safeJS }}');
-    if (!words || words.length === 0) return; // Prevent errors if no words exist
 
-    const element = document.getElementById("dynamic-word");
-    let index = 0;
-    let totalDuration = 1750; // 3 seconds total
-    let intervalTime = Math.floor(totalDuration / words.length); // Time per word
-
-    function updateWord() {
-      if (index < words.length) {
-        word = words[index]
-        element.textContent = word;
-        index++;
-        setTimeout(updateWord, intervalTime);
+function cycleWordsAndScaleImage() {
+  let words = JSON.parse('{{ .Params.banner.words | jsonify | safeJS }}');
+  if (!words || words.length === 0) return;
+  
+  const element = document.getElementById("dynamic-word");
+  const imageSelector = "body > main > div > div > div.flex.flex-col.items-center.w-full.px-4 > div.w-full.max-w-\\[20rem\\].md\\:max-w-\\[300px\\].lg\\:max-w-\\[460px\\].pt-4 > img";
+  
+  let index = 0;
+  let totalDuration = 1750; // 1.75 seconds total
+  let intervalTime = Math.floor(totalDuration / words.length);
+  
+  function updateWord() {
+    if (index < words.length) {
+      element.textContent = words[index];
+      index++;
+      setTimeout(updateWord, intervalTime);
+    } else {
+      element.textContent = words[Math.floor(Math.random() * words.length)];
+    }
+  }
+  
+  // Handle image scaling with transform
+  const observer = new MutationObserver((mutations, obs) => {
+    const image = document.querySelector(imageSelector);
+    if (image) {
+      // Stop observing once we found the image
+      obs.disconnect();
+      
+      // Make sure the image is loaded
+      if (image.complete) {
+        applyTransform(image);
       } else {
-        element.textContent = words[Math.floor(Math.random() * words.length)]; // Final random word
+        image.onload = () => applyTransform(image);
       }
     }
-    updateWord();
+  });
+  
+  // Function to apply smooth transform
+  function applyTransform(img) {
+    // Set transform origin to center
+    img.style.transformOrigin = 'center center';
+    
+    // Add transition for transform property
+    img.style.transition = 'transform 1.75s cubic-bezier(0.25, 0.1, 0.25, 1)';
+    
+    // Use small timeout to ensure transition is registered
+    setTimeout(() => {
+      img.style.transform = 'scale(0.95)';
+    }, 50);
   }
-// Run when the page loads
-    document.addEventListener("DOMContentLoaded", cycleWords);
+  
+  // Start observing the document for the image
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
+  updateWord();
+}
 
-  </script>
+document.addEventListener("DOMContentLoaded", cycleWordsAndScaleImage);
+
+</script>
+
   </html>
