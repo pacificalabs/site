@@ -37,3 +37,61 @@
 
 <!-- search index -->
 {{ partial "search-index.html" . }}
+
+<button id="scrollDownBtn" class="text-dark" aria-label="Scroll Down">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 16.5l-8-8 1.41-1.41L12 13.67l6.59-6.58L20 8.5z"/>
+  </svg>
+</button>
+
+<script>
+  const scrollBtn = document.getElementById('scrollDownBtn');
+
+  function checkOverflow() {
+    const isOverflowing = document.body.scrollHeight > window.innerHeight;
+    const scrollPos = window.scrollY;
+    const bottomThreshold = document.body.scrollHeight - window.innerHeight;
+
+    if (isOverflowing && scrollPos < bottomThreshold - 10) {
+      scrollBtn.style.display = 'block';
+    } else {
+      scrollBtn.style.display = 'none';
+    }
+  }
+
+  function scrollToNextSection() {
+    window.scrollBy({
+      top: window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  scrollBtn.addEventListener('click', scrollToNextSection);
+  window.addEventListener('load', checkOverflow);
+  window.addEventListener('resize', checkOverflow);
+  window.addEventListener('scroll', checkOverflow);
+</script>
+
+
+<style>
+  #scrollDownBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f9f6f5;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    padding: 12px;
+    z-index: 999;
+    display: none;
+    transition: opacity 0.3s ease;
+  }
+  #scrollDownBtn svg {
+    width: 24px;
+    height: 24px;
+  }
+</style>
+
