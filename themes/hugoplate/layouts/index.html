@@ -16,44 +16,44 @@
         </div>
         <div id="text-wrapper" class="w-full text-center">
           <h1 class="animate__animated animate__fadeIn animate__slower my-4 text-4xl lg:text-5xl font-extrabold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
-          <p class="animate__animated animate__fadeIn animate__slower my-4 text-3xl lg:text-4xl">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</p>
-          <p class="animate__animated animate__fadeIn animate__slower text-2xl lg:text-base">
+          <p class="animate__animated animate__fadeIn animate__slower my-4 text-3xl lg:text-4xl">{{ .Params.banner.title }} <span class="py-4" id="dynamic-word">Quickly</span>.</p>
+          <p class="animate__animated animate__fadeIn animate__slower text-2xl my-4 lg:text-base">
             {{ .content | markdownify }}
           </p>
         </div>
 
         <section class="py-20">
           <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-5xl font-bold text-center mt-12 mt-12">What We Do</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mt-12 mt-12">What We Do</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-12">
               <div class="text-center">
                 <div class="text-5xl mb-2">📱</div>
-                <h3 class="font-semibold text-2xl mb-1">Mobile App Development</h3>
+                <h3 class="font-semibold text-2xl my-4">Mobile App Development</h3>
                 <p class="text-lg text-gray-600">iOS and Android apps built with native or cross-platform frameworks using Hotwire Native, Flutter and React Native.</p>
               </div>
               <div class="text-center">
-                <div class="text-5xl mb-2">💻</div>
-                <h3 class="font-semibold text-2xl mb-1">Web Applications</h3>
+                <div class="text-5xl my-4">💻</div>
+                <h3 class="font-semibold text-2xl my-4">Web Applications</h3>
                 <p class="text-lg text-gray-600">Custom dashboards, CRMs, and SaaS platforms using Rails, Node.js, or Django.</p>
               </div>
               <div class="text-center">
-                <div class="text-5xl mb-2">🧠</div>
-                <h3 class="font-semibold text-2xl mb-1">AI & NLP Integration</h3>
+                <div class="text-5xl my-4">🧠</div>
+                <h3 class="font-semibold text-2xl my-4">AI & NLP Integration</h3>
                 <p class="text-lg text-gray-600">Semantic search, recommendation engines, and chat features powered by modern AI tooling.</p>
               </div>
               <div class="text-center">
-                <div class="text-5xl mb-2">🧪</div>
-                <h3 class="font-semibold text-2xl mb-1">Prototyping & MVPs</h3>
+                <div class="text-5xl my-4">🧪</div>
+                <h3 class="font-semibold text-2xl my-4">Prototyping & MVPs</h3>
                 <p class="text-lg text-gray-600">Launch fast with lean prototypes to validate your idea, backed by real development, not just mockups.</p>
               </div>
               <div class="text-center">
-                <div class="text-5xl mb-2">⚙️</div>
-                <h3 class="font-semibold text-2xl mb-1">API Design & Integrations</h3>
+                <div class="text-5xl my-4">⚙️</div>
+                <h3 class="font-semibold text-2xl my-4">API Design & Integrations</h3>
                 <p class="text-lg text-gray-600">APIs and integrations with Stripe, Twilio, WhatsApp, and more.</p>
               </div>
               <div class="text-center">
-                <div class="text-5xl mb-2">🚀</div>
-                <h3 class="font-semibold text-2xl mb-1">Product Strategy & Scaling</h3>
+                <div class="text-5xl my-4">🚀</div>
+                <h3 class="font-semibold text-2xl my-4">Product Strategy & Scaling</h3>
                 <p class="text-lg text-gray-600">Technical guidance, architecture reviews, and scaling strategies to grow your digital product with confidence.</p>
               </div>
             </div>
@@ -65,7 +65,7 @@
 <!-- Portfolio Section -->
 <section class="section py-16">
   <div class="container">
-    <h2 class="text-3xl font-bold text-center mb-12">Featured Work</h2>
+    <h2 class="text-4xl font-bold text-center mb-12">Featured Work</h2>
     <div class="row justify-center">
       {{ $workPages := where site.RegularPages "Params.categories" "intersect" (slice "work") |  first 2 }}
       {{ range $workPages }}
