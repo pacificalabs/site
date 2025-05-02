@@ -41,20 +41,20 @@ itemtype="http://schema.org/WebPage">
     {{ block "main" . }}{{ end }}
   </main>
   <!-- footer -->
-  <!-- {{ partial "essentials/footer.html" . }} -->
+  {{ partial "essentials/footer.html" . }}
   <!-- script (always cache it) -->
   {{ partialCached "essentials/script.html" . }}
 </body>
 <script type="text/javascript">
 
-function cycleWordsAndScaleImage() {
-  let words = JSON.parse('{{ .Params.banner.words | jsonify | safeJS }}');
-  if (!words || words.length === 0) return;
-  
-  const element = document.getElementById("dynamic-word");
-  const imageSelector = "body > main > div > div > div.flex.flex-col.items-center.w-full.px-4 > div.w-full.max-w-\\[20rem\\].md\\:max-w-\\[300px\\].lg\\:max-w-\\[460px\\].pt-4 > img";
-  
-  let index = 0;
+  function cycleWordsAndScaleImage() {
+    let words = JSON.parse('{{ .Params.banner.words | jsonify | safeJS }}');
+    if (!words || words.length === 0) return;
+
+    const element = document.getElementById("dynamic-word");
+    const imageSelector = "body > main > div > div > div.flex.flex-col.items-center.w-full.px-4 > div.w-full.max-w-\\[20rem\\].md\\:max-w-\\[300px\\].lg\\:max-w-\\[460px\\].pt-4 > img";
+
+    let index = 0;
   let totalDuration = 1750; // 1.75 seconds total
   let intervalTime = Math.floor(totalDuration / words.length);
   
@@ -86,6 +86,8 @@ function cycleWordsAndScaleImage() {
   
   // Function to apply smooth transform
   function applyTransform(img) {
+    const imageWrapper = document.getElementById('image-wrapper');
+    const textWrapper = document.getElementById('text-wrapper');
     // Set transform origin to center
     img.style.transformOrigin = 'center center';
     
@@ -94,8 +96,16 @@ function cycleWordsAndScaleImage() {
     
     // Use small timeout to ensure transition is registered
     setTimeout(() => {
-      img.style.transform = 'scale(0.95)';
+      img.style.transform = 'scale(0.90)';
     }, 50);
+
+      if (imageWrapper) {
+      // imageWrapper.classList.remove("w-full", "pt-4", "max-w-[20rem]","md:max-w-[300px]","lg:max-w-[460px]")        
+      };
+
+    if (textWrapper) {
+    };
+
   }
   
   // Start observing the document for the image
@@ -111,4 +121,4 @@ document.addEventListener("DOMContentLoaded", cycleWordsAndScaleImage);
 
 </script>
 
-  </html>
+</html>

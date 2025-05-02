@@ -1,7 +1,7 @@
 ---
 banner:
   title: "Grow Your Business."
-  content: "With our precision-engineered apps & services."
+  content: "With precision-engineered apps & digital services that scale with you."
   image: "images/logo2023.png"
   button:
     enable: true

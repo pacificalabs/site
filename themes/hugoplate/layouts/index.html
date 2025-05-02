@@ -5,7 +5,7 @@
   <div class="flex-1 flex flex-col items-center w-full max-w-screen-md">
     <!-- Top Section with Image and Text -->
     <div class="flex flex-col items-center w-full px-4">
-      <div class="w-full max-w-[20rem] md:max-w-[300px] lg:max-w-[460px] pt-4">
+      <div id="image-wrapper" class="w-full max-w-[20rem] md:max-w-[300px] lg:max-w-[460px] pt-4">
         {{ partial "image" (dict 
           "Src" .image 
           "Alt" "Banner image" 
@@ -13,73 +13,130 @@
           "Class" "animate__animated animate__fadeIn mx-auto w-full" 
           "DisplayXL" "700x" 
           ) }}
-      </div>
-      <div class="w-full text-center">
-        <h1 class="animate__animated animate__fadeIn animate__slower my-4 text-4xl lg:text-5xl font-bold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
-        <p class="animate__animated animate__fadeIn animate__slower my-4 text-3xl lg:text-4xl">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</p>
-                <p class="animate__animated animate__fadeIn animate__slower mb-4 text-2xl lg:text-base">
-          {{ .content | markdownify }}
-        </p>
-      </div>
-    </div>
-    <!-- Mobile Navigation -->
-    <div id="mobile-nav" class="block lg:hidden w-full px-8 mb-8">
-      <div class="flex flex-col items-center space-y-1">
-        {{ $currentPage := . }}
-        {{ range site.Menus.main }}
-        {{ if ne .Name "Home" }}
-        {{ $menuURL := .URL | absLangURL }}
-        {{ $pageURL:= $currentPage.Permalink | absLangURL }}
-        {{ $active := eq $menuURL $pageURL }}
-        {{ if .HasChildren }}
-        <div class="nav-item nav-dropdown group relative text-center">
-          <span class="nav-link text-xl {{ range .Children }}{{ $childURL := .URL | absLangURL }}{{ $active := eq $childURL $pageURL }}{{ if $active }}active{{ end }}{{ end }} inline-flex items-center">
-            {{ .Name }}
-            <svg class="h-4 w-4 fill-current ml-1" viewBox="0 0 20 20">
-              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-            </svg>
-          </span>
-          <div class="nav-dropdown-list hidden group-hover:block absolute right-0 mt-2">
-            {{ range .Children }}
-            {{ $childURL := .URL | absLangURL }}
-            {{ $active := eq $childURL $pageURL }}
-            <a
-              class="nav-dropdown-link block px-4 py-1 {{ if $active }}active{{- end -}}"
-              {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
-              href="{{- if findRE `^#` .URL -}}{{- if not $.IsHome -}}{{- site.Home.RelPermalink -}}{{- end }}{{- .URL -}}{{- else -}}{{- .URL | relLangURL -}}{{- end -}}">
-              {{ .Name }}
-            </a>
-            {{ end }}
-          </div>
         </div>
-        {{ else }}
-        <a
-          class="nav-link text-md md:text-xl {{ if $active }}active{{- end -}}"
-          {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
-          href="{{- if findRE `^#` .URL -}}{{- if not $.IsHome -}}{{- site.Home.RelPermalink -}}{{- end }}{{- .URL -}}{{- else -}}{{- .URL | relLangURL -}}{{- end -}}">
-          {{ .Name }}
-        </a>
-        {{ end }}
-        {{ end }}
-        {{ end }}
+        <div id="text-wrapper" class="w-full text-center">
+          <h1 class="animate__animated animate__fadeIn animate__slower my-4 text-4xl lg:text-5xl font-extrabold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
+          <p class="animate__animated animate__fadeIn animate__slower my-4 text-3xl lg:text-4xl">{{ .Params.banner.title }} <span id="dynamic-word">Quickly</span>.</p>
+          <p class="animate__animated animate__fadeIn animate__slower text-2xl lg:text-base">
+            {{ .content | markdownify }}
+          </p>
+        </div>
+
+        <section class="py-20">
+          <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mt-12 mt-12">What We Do</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-12">
+              <div class="text-center">
+                <div class="text-5xl mb-2">📱</div>
+                <h3 class="font-semibold text-2xl mb-1">Mobile App Development</h3>
+                <p class="text-lg text-gray-600">iOS and Android apps built with native or cross-platform frameworks using Hotwire Native, Flutter and React Native.</p>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl mb-2">💻</div>
+                <h3 class="font-semibold text-2xl mb-1">Web Applications</h3>
+                <p class="text-lg text-gray-600">Custom dashboards, CRMs, and SaaS platforms using Rails, Node.js, or Django.</p>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl mb-2">🧠</div>
+                <h3 class="font-semibold text-2xl mb-1">AI & NLP Integration</h3>
+                <p class="text-lg text-gray-600">Semantic search, recommendation engines, and chat features powered by modern AI tooling.</p>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl mb-2">🧪</div>
+                <h3 class="font-semibold text-2xl mb-1">Prototyping & MVPs</h3>
+                <p class="text-lg text-gray-600">Launch fast with lean prototypes to validate your idea, backed by real development, not just mockups.</p>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl mb-2">⚙️</div>
+                <h3 class="font-semibold text-2xl mb-1">API Design & Integrations</h3>
+                <p class="text-lg text-gray-600">APIs and integrations with Stripe, Twilio, WhatsApp, and more.</p>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl mb-2">🚀</div>
+                <h3 class="font-semibold text-2xl mb-1">Product Strategy & Scaling</h3>
+                <p class="text-lg text-gray-600">Technical guidance, architecture reviews, and scaling strategies to grow your digital product with confidence.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+<!-- Portfolio Section -->
+<section class="section py-16">
+  <div class="container">
+    <h2 class="text-3xl font-bold text-center mb-12">Featured Work</h2>
+    <div class="row justify-center">
+      {{ $workPages := where site.RegularPages "Params.categories" "intersect" (slice "work") |  first 2 }}
+      {{ range $workPages }}
+      <div class="col-12 md:col-10 lg:col-10 xl:col-10 mx-auto">
+        {{ partial "components/blog-card" . }}
       </div>
-      {{ with .button }}
-      {{ if .enable }}
-      <div class="mt-6 text-center">
-        <a
-          class="btn"
-          href="{{ .link | absURL }}"
-          {{ if strings.HasPrefix .link `http` }}
-          target="_blank" rel="noopener"
-          {{ end }}>
-          {{ .label }}
-          <i class="fa fa-envelope pl-2"></i>
-        </a>
-      </div>
-      {{ end }}
       {{ end }}
     </div>
   </div>
+</section>
+
+
+</div>
+<!-- Mobile Navigation -->
+<div id="mobile-nav" class="block lg:hidden w-full px-8 mb-8">
+  <div class="flex flex-col items-center space-y-1">
+    {{ $currentPage := . }}
+    {{ range site.Menus.main }}
+    {{ if ne .Name "Home" }}
+    {{ $menuURL := .URL | absLangURL }}
+    {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+    {{ $active := eq $menuURL $pageURL }}
+    {{ if .HasChildren }}
+    <div class="nav-item nav-dropdown group relative text-center">
+      <span class="nav-link text-xl {{ range .Children }}{{ $childURL := .URL | absLangURL }}{{ $active := eq $childURL $pageURL }}{{ if $active }}active{{ end }}{{ end }} inline-flex items-center">
+        {{ .Name }}
+        <svg class="h-4 w-4 fill-current ml-1" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+        </svg>
+      </span>
+      <div class="nav-dropdown-list hidden group-hover:block absolute right-0 mt-2">
+        {{ range .Children }}
+        {{ $childURL := .URL | absLangURL }}
+        {{ $active := eq $childURL $pageURL }}
+        <a
+        class="nav-dropdown-link block px-4 py-1 {{ if $active }}active{{- end -}}"
+        {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
+        href="{{- if findRE `^#` .URL -}}{{- if not $.IsHome -}}{{- site.Home.RelPermalink -}}{{- end }}{{- .URL -}}{{- else -}}{{- .URL | relLangURL -}}{{- end -}}">
+        {{ .Name }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ else }}
+  <a
+  class="nav-link text-md md:text-xl {{ if $active }}active{{- end -}}"
+  {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
+  href="{{- if findRE `^#` .URL -}}{{- if not $.IsHome -}}{{- site.Home.RelPermalink -}}{{- end }}{{- .URL -}}{{- else -}}{{- .URL | relLangURL -}}{{- end -}}">
+  {{ .Name }}
+</a>
+{{ end }}
+{{ end }}
+{{ end }}
+</div>
+{{ with .button }}
+{{ if .enable }}
+<div class="mt-6 text-center">
+  <a
+  class="btn"
+  href="{{ .link | absURL }}"
+  {{ if strings.HasPrefix .link `http` }}
+  target="_blank" rel="noopener"
+  {{ end }}>
+  {{ .label }}
+  <i class="fa fa-envelope pl-2"></i>
+</a>
+</div>
+{{ end }}
+{{ end }}
+</div>
+</div>
 </div>
 {{ end }}
 {{ end }}

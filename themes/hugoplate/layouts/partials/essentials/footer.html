@@ -1,39 +1,36 @@
-<footer class="bg-theme-light dark:bg-darkmode-theme-light">
-  <div class="container">
-    <div class="row items-center py-10">
-      <div class="lg:col-6 mb-8 text-center lg:mb-0">
-        <ul>
+<footer class="dark:bg-darkmode-theme-light py-10">
+  <div class="container-fluid mx-auto px-4">
+    <div class="flex flex-col lg:flex-row items-center justify-between">
+      <div class="mb-6 lg:mb-0 text-center lg:text-left">
+        <p class="text-sm">© {{ now.Year }} Pacifica Labs. All rights reserved.</p>
+      </div>
+      <div class="mb-6 lg:mb-0">
+        <ul class="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
           {{ range site.Menus.footer }}
-            <li class="m-3 inline-block">
-              <a
-                {{ if findRE `^http` .URL }}
-                  target="_blank" rel="noopener"
-                {{ end }}
-                href="{{ if findRE `^#` .URL }}
-                  {{ if not $.IsHome }}
-                    {{ site.Home.RelPermalink }}
-                  {{ end }}{{ .URL }}
-                {{ else }}
-                  {{ .URL | relLangURL }}
-                {{ end }}"
-                >{{ .Name }}</a
-              >
-            </li>
+          <li>
+            <a
+              class="hover:underline"
+              {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
+              href="{{ if findRE `^#` .URL }}{{ if not $.IsHome }}{{ site.Home.RelPermalink }}{{ end }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">
+              {{ .Name }}
+            </a>
+          </li>
           {{ end }}
         </ul>
       </div>
-      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
-        <ul class="social-icons">
+      <div class="text-center lg:text-right">
+        <ul class="flex justify-center lg:justify-end gap-4">
           {{ range site.Data.social.main }}
-            <li>
-              <a
-                target="_blank"
-                aria-label="{{ .name }}"
-                rel="nofollow noopener"
-                href="{{ .link | safeURL }}">
-                <i class="{{ .icon }}"></i>
-              </a>
-            </li>
+          <li>
+            <a
+              target="_blank"
+              aria-label="{{ .name }}"
+              rel="nofollow noopener"
+              href="{{ .link | safeURL }}"
+              class="text-white hover:text-blue-400 transition">
+              <i class="{{ .icon }} text-xl"></i>
+            </a>
+          </li>
           {{ end }}
         </ul>
       </div>

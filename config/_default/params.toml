@@ -38,7 +38,7 @@ preloader = "" # use jpg, png, svg or gif format.
 # Navigation button
 [navigation_button]
 enable = true
-label = "Book A Demo"
+label = "Book A Consultation"
 link = "contact"
 
 # search
