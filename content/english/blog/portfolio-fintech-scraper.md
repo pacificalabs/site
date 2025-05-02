@@ -13,4 +13,4 @@ tags: ["ruby-on-rails","active-record","developer","database","back-end"]
 author: "Tarun Mookhey"
 draft: false
 ---
-This is a template for a portfolio example....
+Site renovation in progress; Come back for more info soon!
