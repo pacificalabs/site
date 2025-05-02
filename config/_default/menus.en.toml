@@ -12,7 +12,7 @@ pageRef = "/about"
 weight = 2
 
 [[main]]
-name = "Lab Work"
+name = "Case Studies"
 pageRef = "/categories/work"
 weight = 3
 
