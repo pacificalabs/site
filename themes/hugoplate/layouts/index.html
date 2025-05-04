@@ -16,8 +16,8 @@
         </div>
         <div id="text-wrapper" class="w-full text-center">
           <h1 class="animate__animated animate__fadeIn animate__slower my-4 text-4xl lg:text-5xl font-extrabold">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
-          <p class="animate__animated animate__fadeIn animate__slower my-4 text-3xl lg:text-4xl">{{ .Params.banner.title }} <span class="py-4" id="dynamic-word">Quickly</span>.</p>
-          <p class="animate__animated animate__fadeIn animate__slower text-2xl my-4 lg:text-base">
+          <p class="animate__animated animate__fadeIn animate__slower my-4 text-3xl lg:text-4xl font-bold">{{ .Params.banner.title }} <span class="py-4" id="dynamic-word">Quickly</span>.</p>
+          <p class="animate__animated animate__fadeIn animate__slower text-2xl my-4 lg:text-base italic">
             {{ .content | markdownify }}
           </p>
         </div>
