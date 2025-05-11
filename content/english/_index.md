@@ -2,7 +2,7 @@
 banner:
   title: "Grow Your Business."
   content: "With precision-engineered apps & digital services that scale with you."
-  image: "images/logo2025a.png"
+  image: "images/logo2025b.png"
   button:
     enable: true
     label: "Contact Us"
