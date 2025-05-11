@@ -10,16 +10,16 @@
           "Src" .image 
           "Alt" "Banner image" 
           "Loading" "eager" 
-          "Class" "animate__animated animate__fadeIn mx-auto w-full" 
+          "Class" "animate__animated animate__fadeIn animate__slower mx-auto w-full" 
           "DisplayXL" "700x" 
           ) }}
         </div>
 
 
         <div id="text-wrapper" class="w-full text-center">
-          <h1 class="animate__animated animate__fadeIn animate__slower my-4 text-4xl lg:text-5xl">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
-          <p class="animate__animated animate__fadeIn animate__slower my-4 text-4xl lg:text-5xl">{{ .Params.banner.title }} <span class="py-4" id="dynamic-word">Quickly</span>.</p>
-          <p class="animate__animated animate__fadeIn animate__slower text-2xl my-4 lg:text-base text-[#1b255f]">
+          <h1 class="animate__animated animate__fadeInDown animate__slower my-4 text-4xl lg:text-5xl">{{ .Params.banner.title }} <span>{{ .title | markdownify }}</span></h1>
+          <p class="animate__animated animate__fadeInDown animate__slower my-4 text-4xl lg:text-5xl">{{ .Params.banner.title }} <span class="py-4" id="dynamic-word">Quickly</span>.</p>
+          <p class="animate__animated animate__fadeInDown animate__slower text-2xl my-4 lg:text-base text-[#1b255f]">
             {{ .content | markdownify }}
           </p>
         </div>
